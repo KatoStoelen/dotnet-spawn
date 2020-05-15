@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <LangVersion>9.0</LangVersion>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>spawn</ToolCommandName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.NETCore.Plugins" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="NuGet.Frameworks" Version="5.10.0" />
+    <PackageReference Include="NuGet.Protocol" Version="5.10.0" />
+    <PackageReference Include="Spectre.Console" Version="0.40.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotnetSpawn.Plugin\DotnetSpawn.Plugin.csproj" />
+  </ItemGroup>
+
+</Project>

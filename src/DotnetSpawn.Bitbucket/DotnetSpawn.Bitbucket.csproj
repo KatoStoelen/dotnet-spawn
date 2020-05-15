@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <OutputType>library</OutputType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotnetSpawn.Plugin\DotnetSpawn.Plugin.csproj">
+      <Private>false</Private>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None
+      Include="bin\$(Configuration)\$(TargetFramework)\publish\*.dll"
+      Exclude="bin\$(Configuration)\$(TargetFramework)\publish\$(AssemblyName).dll"
+      Pack="true"
+      PackagePath="lib\$(TargetFramework)\"
+      CopyToOutputDirectory="Never" />
+    <None
+      Include="bin\$(Configuration)\$(TargetFramework)\publish\*.pdb"
+      Exclude="bin\$(Configuration)\$(TargetFramework)\publish\$(PdbFile)"
+      Pack="true"
+      PackagePath="lib\$(TargetFramework)\"
+      CopyToOutputDirectory="Never" />
+  </ItemGroup>
+
+</Project>
